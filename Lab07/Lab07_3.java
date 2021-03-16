@@ -1,0 +1,70 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+
+public class Lab07_3 {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.println("----------------------------------------------");
+        System.out.println("Student");
+        System.out.print("Name: ");
+        String name = in.nextLine();
+        System.out.print("Address: ");
+        String address = in.nextLine();
+        System.out.print("Phone: ");
+        String phoneNo = in.nextLine();
+        System.out.print("Email: ");
+        String email = in.nextLine();
+        System.out.print("Status: ");
+        String status = in.nextLine();
+        Status s = new Status(name, address, email, phoneNo, status);
+        System.out.println(s.toString());
+        System.out.println("----------------------------------------------");
+        System.out.println("Faculty");
+        System.out.print("Name: ");
+        name = in.nextLine();
+        System.out.print("Address: ");
+        address = in.nextLine();
+        System.out.print("Phone: ");
+        phoneNo = in.nextLine();
+        System.out.print("Email: ");
+        email = in.nextLine();
+        System.out.print("Office: ");
+        String office = in.nextLine();
+        System.out.print("Office hours: ");
+        String officeHours = in.nextLine();
+        System.out.print("Rank: ");
+        String rank = in.nextLine();
+        System.out.print("Salary: ");
+        double salary = in.nextDouble();
+        in.nextLine();
+        LocalDate ld = LocalDate.of(2018, Month.FEBRUARY, 28);
+        Faculty f = new Faculty(name , address, email, phoneNo, office, salary, ld, officeHours, rank);
+        System.out.println(f.toString());
+        System.out.println("----------------------------------------------");
+        System.out.println("Staff");
+        System.out.print("Name: ");
+        name = in.nextLine();
+        System.out.print("Address: ");
+        address = in.nextLine();
+        System.out.print("Phone: ");
+        phoneNo = in.nextLine();
+        System.out.print("Email: ");
+        email = in.nextLine();
+        System.out.print("Office: ");
+        office = in.nextLine();
+        System.out.print("Salary: ");
+        salary = in.nextDouble();
+        in.nextLine();
+        System.out.print("Title: ");
+        String title = in.nextLine();
+        ld = LocalDate.of(2019, Month.DECEMBER, 31);
+        Staff st = new Staff(name, address, email, phoneNo, office, salary, ld, title);
+        System.out.println(st.toString());
+        System.out.println("----------------------------------------------");
+
+        // System.out.println(s.toString());
+        // System.out.println(f.toString());
+        // System.out.println(st.toString());
+    }
+}
