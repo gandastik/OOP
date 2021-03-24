@@ -69,10 +69,16 @@ class B extends A {
 
 
 class Geometric{
-
+    //Protected modifiers ( + allow the subclass to access the data type)
+    private String color;
+    
     //Constructure
     Geometric() {
 
+    }
+
+    protected String getColor() {
+        return this.color;
     }
 
     public double getArea() {
@@ -92,6 +98,11 @@ class Circle extends Geometric {
     public double getArea(){
         System.out.println(Math.PI  * this.r * this.r );
         return Math.PI * this.r * this.r;
+    }
+    
+    //Protected Modifiers
+    public String toString() {
+        return getColor() + "in Circle class";
     }
 }
 
