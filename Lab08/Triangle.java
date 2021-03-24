@@ -13,6 +13,15 @@ public class Triangle extends Geometric {
         this.s = (this.side1 +this.side2 +this.side3) / 2.0;
     }
 
+    public Triangle(double side1, double side2, double side3, String color, double weight) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+        this.s = (this.side1 +this.side2 +this.side3) / 2.0;
+        super.color = color;
+        super.weight = weight;
+    }
+
     //Methods
     public double getArea() {
         super.area = Math.sqrt((this.s * (this.s - this.side1) * (this.s - this.side2) * (this.s - this.side3)));
