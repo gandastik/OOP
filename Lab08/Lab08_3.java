@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab08_3 {
-    public static void main (String[] args) {
+    public static void main (String[] args) throws CloneNotSupportedException {
         ArrayList<Geometric> arr = new ArrayList<Geometric>();
         Scanner in = new Scanner(System.in);
         while(true){
@@ -25,7 +25,7 @@ public class Lab08_3 {
                 //Cloning cricle c3 by using other circle
                 System.out.print("Cloning Circle c3 by using : ");
                 String name = in.next();
-                Circle c3 = (Circle)getObjectByName(arr, name);
+                Circle c3 = ((Circle)(Circle)getObjectByName(arr, name)).clone();
                 arr.add(c3);
                 // System.out.println(name +" == c3 is : " + getObjectByName(arr, name) == c3);
                 System.out.println(name + ".equals(c3) is: " + getObjectByName(arr, name).equals(c3));
@@ -36,10 +36,10 @@ public class Lab08_3 {
                 String input = in.nextLine();
                 input = in.nextLine();
                 String[] names = input.split(" ");
-                if(getObjectByName(arr, names[0]).compareTo(getObjectByName(arr, names[1])) == 1) {
+                if(((Circle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == 1) {
                     System.out.println("Answer: " + getObjectByName(arr, names[0]).getName() );
                 }
-                else if(getObjectByName(arr, names[0]).compareTo(getObjectByName(arr, names[1])) == -1) {
+                else if(((Circle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == -1) {
                     System.out.println("Answer: " + getObjectByName(arr, names[1]).getName() );
                 }
                 else {
@@ -66,7 +66,7 @@ public class Lab08_3 {
                 //Cloning cricle c3 by using other circle
                 System.out.print("Cloning Rectangle r3 by using : ");
                 String name = in.next();
-                Rectangle r3 = (Rectangle)getObjectByName(arr, name);
+                Rectangle r3 = ((Rectangle)(Rectangle)getObjectByName(arr, name)).clone();
                 arr.add(r3);
                 // System.out.println(name +" == c3 is : " + getObjectByName(arr, name) == c3);
                 System.out.println(name + ".equals(r3) is: " + getObjectByName(arr, name).equals(r3));
@@ -77,10 +77,10 @@ public class Lab08_3 {
                 String input = in.nextLine();
                 input = in.nextLine();
                 String[] names = input.split(" ");
-                if(getObjectByName(arr, names[0]).compareTo(getObjectByName(arr, names[1])) == 1) {
+                if(((Rectangle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == 1) {
                     System.out.println("Answer: " + getObjectByName(arr, names[0]).getName() );
                 }
-                else if(getObjectByName(arr, names[0]).compareTo(getObjectByName(arr, names[1])) == -1) {
+                else if(((Rectangle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == -1) {
                     System.out.println("Answer: " + getObjectByName(arr, names[1]).getName() );
                 }
                 else {
@@ -91,7 +91,45 @@ public class Lab08_3 {
                 System.out.println();
             }
             else if(menu == 3) {
+                //Creating t1 and t2
+                System.out.print("Triangle t1 (side1 side2 side3 color weight) : ");
+                Triangle t1 = new Triangle(in.nextDouble(), in.nextDouble(), in.nextDouble(), in.next(), in.nextDouble());
+                t1.setName("t1");
+                arr.add(t1);
+                System.out.print("Triangle t2 (side1 side2 side3 color weight) : ");
+                Triangle t2 = new Triangle(in.nextDouble(), in.nextDouble(), in.nextDouble(), in.next(), in.nextDouble());
+                t2.setName("t2");
+                arr.add(t2);
 
+                //3.1 Find the larger object using max method
+                System.out.print("3.1 Find the larger object using max method : ");
+                System.out.println("Answer: " + Geometric.max(getObjectByName(arr, in.next()), getObjectByName(arr, in.next())));
+                
+                //Cloning Triangle t3 by using other triangle
+                System.out.print("Cloning Rectangle t3 by using : ");
+                String name = in.next();
+                Triangle t3 = ((Triangle)(Triangle)getObjectByName(arr, name)).clone();
+                arr.add(t3);
+                System.out.println(name + ".equals(t3) is: " + getObjectByName(arr, name).equals(t3));
+                t3.setName("t3");
+
+                //Compare between two comparable objects
+                System.out.print("3.2 Find the larger 2 instances of comparable objects: ");
+                String input = in.nextLine();
+                input = in.nextLine();
+                String[] names = input.split(" ");
+                if(((Triangle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == 1) {
+                    System.out.println("Answer: " + getObjectByName(arr, names[0]).getName() );
+                }
+                else if(((Triangle)getObjectByName(arr, names[0])).compareTo(getObjectByName(arr, names[1])) == -1) {
+                    System.out.println("Answer: " + getObjectByName(arr, names[1]).getName() );
+                }
+                else {
+                    System.out.println("Answer: EQUAL");
+                }
+                System.out.println();
+                System.out.println("------------------------------");
+                System.out.println();
             }
             else if(menu == 4){
                 System.out.println("End of program.");

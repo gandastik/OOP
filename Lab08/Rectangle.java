@@ -45,9 +45,9 @@ public class Rectangle extends Geometric implements Comparable, Cloneable{
     } 
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Rectangle clone() throws CloneNotSupportedException {
         // TODO Auto-generated method stub
-        return super.clone();
+        return (Rectangle)super.clone();
     }
 
     //Setters

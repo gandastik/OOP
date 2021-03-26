@@ -28,7 +28,7 @@ public class Circle extends Geometric implements Comparable, Cloneable {
         return Math.PI * 2 * this.radius;
 
     }
-    @Override
+
     public int compareTo(Object c) {
         if(((Circle)c).getArea() == this.getArea()){
             return 0;
@@ -39,7 +39,7 @@ public class Circle extends Geometric implements Comparable, Cloneable {
         else return -1;
 
     }
-    
+
     public boolean equals(Circle c){
         if(c.getRadius() == this.radius){
             return true;
@@ -48,7 +48,7 @@ public class Circle extends Geometric implements Comparable, Cloneable {
     }
 
     @Override
-    protected Object clone()
+    protected Circle clone()
         throws CloneNotSupportedException
     {
         return (Circle)super.clone();

@@ -1,9 +1,10 @@
 import java.lang.Math;
-public class Triangle extends Geometric { 
+public class Triangle extends Geometric implements Cloneable, Comparable{ 
     private double side1;
     private double side2;
     private double side3;
     private double s;
+    private String name;
     
     //Constructure
     public Triangle(double side1, double side2, double side3) {
@@ -33,6 +34,30 @@ public class Triangle extends Geometric {
         return this.side1 + this.side2 + this.side3;
     }
 
+    @Override
+    protected Triangle clone() throws CloneNotSupportedException {
+        return (Triangle)super.clone();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if(this.getArea() == ((Triangle)o).getArea() ) {
+            return 0;
+        }
+        else if(this.getArea() > ((Triangle)o).getArea()) {
+            return 1;
+        }
+        else return -1;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this.getArea() == ((Triangle)obj).getArea()) {
+            return true;
+        }
+        return false;
+    }
+
     //Setters
     public void setIsFilled(boolean bool){
         super.isFilled = bool;
@@ -40,6 +65,10 @@ public class Triangle extends Geometric {
 
     public void setColor(String color) {
         super.color = color;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     //Getters
@@ -53,5 +82,9 @@ public class Triangle extends Geometric {
 
     public String toString() {
         return "Triengle{side1: " + this.side1 + ", side2: " + this.side2 + ", side3: " + this.side3 + ", Color: " + super.color + ", isFilled: " + super.isFilled + ", Area: " + this.getArea() + ", Parameter: " + this.getParameter() + "}";
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
