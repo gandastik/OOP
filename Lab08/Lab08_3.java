@@ -27,8 +27,8 @@ public class Lab08_3 {
                 String name = in.next();
                 Circle c3 = ((Circle)(Circle)getObjectByName(arr, name)).clone();
                 arr.add(c3);
-                // System.out.println(name +" == c3 is : " + getObjectByName(arr, name) == c3);
-                System.out.println(name + ".equals(c3) is: " + getObjectByName(arr, name).equals(c3));
+                System.out.println(name +" == c3 is : " + ((Circle)getObjectByName(arr, name) == (Circle)c3));
+                System.out.println(name + ".equals(c3) is: " + ((Circle)getObjectByName(arr, name)).equals(c3));
                 c3.setName("c3");
 
                 //Compare between two comparable objects
@@ -68,8 +68,8 @@ public class Lab08_3 {
                 String name = in.next();
                 Rectangle r3 = ((Rectangle)(Rectangle)getObjectByName(arr, name)).clone();
                 arr.add(r3);
-                // System.out.println(name +" == c3 is : " + getObjectByName(arr, name) == c3);
-                System.out.println(name + ".equals(r3) is: " + getObjectByName(arr, name).equals(r3));
+                System.out.println(name +" == r3 is : " + ((Rectangle)getObjectByName(arr, name) == (Rectangle)r3));
+                System.out.println(name + ".equals(r3) is: " + ((Rectangle)getObjectByName(arr, name)).equals(r3));
                 r3.setName("r3");
 
                 //Compare between two comparable objects
@@ -110,7 +110,8 @@ public class Lab08_3 {
                 String name = in.next();
                 Triangle t3 = ((Triangle)(Triangle)getObjectByName(arr, name)).clone();
                 arr.add(t3);
-                System.out.println(name + ".equals(t3) is: " + getObjectByName(arr, name).equals(t3));
+                System.out.println(name +" == t3 is : " + ((Triangle)getObjectByName(arr, name) == (Triangle)t3));
+                System.out.println(name + ".equals(t3) is: " + ((Triangle)getObjectByName(arr, name)).equals(t3));
                 t3.setName("t3");
 
                 //Compare between two comparable objects
