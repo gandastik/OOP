@@ -37,7 +37,6 @@ public class Circle extends Geometric implements Comparable, Cloneable {
             return 1;
         }
         else return -1;
-
     }
 
     public boolean equals(Circle c){

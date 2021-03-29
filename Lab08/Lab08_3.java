@@ -142,6 +142,7 @@ public class Lab08_3 {
         }
     }
 
+    //functions that return object by using name as a parameter. It will run through all the array and check if the input String "name" equals to the object's name.
     public static Geometric getObjectByName(ArrayList<Geometric> arr, String name) {
         for(Geometric o: arr){
             if(o.getName().equals(name)){ 

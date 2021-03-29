@@ -1,7 +1,4 @@
-import java.awt.Rectangle;
-
 public class ComparableRectangle extends Rectangle implements Comparable{
-
 
     public int compareTo(Rectangle rect){
         if(rect.getArea() == super.getArea()){
